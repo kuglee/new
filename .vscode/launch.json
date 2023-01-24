@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug new Simulator",
+      "program": "${workspaceFolder:new}/.build/Build/Products/Debug-iphonesimulator/new.app",
+      "preLaunchTask": "Run new",
+      "iosBundleId": "com.kuglee.new",
+      "iosTarget": "last-selected",
+      "terminal": "console",
+    },
+  ]
+}

@@ -11,6 +11,8 @@
 		5D3B3DF0297D9C1F00127155 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3B3DEF297D9C1F00127155 /* ContentView.swift */; };
 		5D3B3DF2297D9C2000127155 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B3DF1297D9C2000127155 /* Assets.xcassets */; };
 		5D3B3DF5297D9C2000127155 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D3B3DF4297D9C2000127155 /* Preview Assets.xcassets */; };
+		5D87ADB5297FB6C40035376E /* HotReloading in Frameworks */ = {isa = PBXBuildFile; productRef = 5D87ADB4297FB6C40035376E /* HotReloading */; };
+		5D87ADB7297FB6C90035376E /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = 5D87ADB6297FB6C90035376E /* Inject */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D87ADB5297FB6C40035376E /* HotReloading in Frameworks */,
+				5D87ADB7297FB6C90035376E /* Inject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +41,7 @@
 			children = (
 				5D3B3DEC297D9C1F00127155 /* new */,
 				5D3B3DEB297D9C1F00127155 /* Products */,
+				5D3B3E03297DAD5100127155 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +72,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		5D3B3E03297DAD5100127155 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,6 +95,10 @@
 			dependencies = (
 			);
 			name = new;
+			packageProductDependencies = (
+				5D87ADB4297FB6C40035376E /* HotReloading */,
+				5D87ADB6297FB6C90035376E /* Inject */,
+			);
 			productName = new;
 			productReference = 5D3B3DEA297D9C1F00127155 /* new.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +127,10 @@
 				Base,
 			);
 			mainGroup = 5D3B3DE1297D9C1F00127155;
+			packageReferences = (
+				5D3B3DFD297DA3FB00127155 /* XCRemoteSwiftPackageReference "HotReloading" */,
+				5D3B3E00297DA40700127155 /* XCRemoteSwiftPackageReference "Inject" */,
+			);
 			productRefGroup = 5D3B3DEB297D9C1F00127155 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -280,6 +300,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
+				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuglee.new;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -309,6 +334,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
+				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuglee.new;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -339,6 +369,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5D3B3DFD297DA3FB00127155 /* XCRemoteSwiftPackageReference "HotReloading" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnno1962/HotReloading";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		5D3B3E00297DA40700127155 /* XCRemoteSwiftPackageReference "Inject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5D87ADB4297FB6C40035376E /* HotReloading */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D3B3DFD297DA3FB00127155 /* XCRemoteSwiftPackageReference "HotReloading" */;
+			productName = HotReloading;
+		};
+		5D87ADB6297FB6C90035376E /* Inject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D3B3E00297DA40700127155 /* XCRemoteSwiftPackageReference "Inject" */;
+			productName = Inject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5D3B3DE2297D9C1F00127155 /* Project object */;
 }

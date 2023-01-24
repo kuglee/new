@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run new",
+      "detail": "Run new",
+      "type": "process",
+      "command": "xcodebuild",
+      "args": [
+        "-allowProvisioningUpdates",
+        "-project",
+        "${workspaceFolder:new}/new.xcodeproj",
+        "-scheme",
+        "new",
+        "-configuration",
+        "Debug",
+        "-derivedDataPath",
+        "${workspaceFolder:new}/.build",
+        "ARCHS=arm64",
+        "-sdk",
+        "${command:ios-debug.targetSdk}",
+      ],
+    }
+  ]
+}
